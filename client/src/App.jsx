@@ -18,7 +18,7 @@
 //     <button>Change Name</button>
 
 //     </div>
-    
+
 //     </>
 //   )
 // }
@@ -146,43 +146,42 @@ import React, { useState } from 'react'
 function App() {
   const [isOn, setIsOn] = useState(false)
 
-  const [text,setText] = useState("");
+  const [text, setText] = useState("");
 
-  const [isVisible,setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
 
   return (
     <>
-    <div>
-      <h1>Toggle Button</h1>
-      <button onClick={()=> setIsOn(!isOn)}>{isOn ? "ON" : "OFF"}
-      </button>
-    </div>
+      <div>
+        <h1>Toggle Button</h1>
+        <button onClick={() => setIsOn(!isOn)}>{isOn ? "ON" : "OFF"}
+        </button>
+      </div>
 
-    {/* input words */}
-    <br/> 
+      {/* input words */}
+      <br />
 
-    <div>
-  <h2>Type Something</h2>
-    <input 
-    type='text'
-    value={text}
-    onChange={(x) => setText(x.target.value)}
-    placeholder='"Type Here...'
-    />
-    <p>You typed: {text}</p>
-    </div>
+      <div>
+        <h2>Type Something</h2>
+        <input
+          type='text'
+          value={text}
+          onChange={(x) => setText(x.target.value)}
+          placeholder='"Type Here...'
+        />
+        <p>You typed: {text}</p>
+      </div>
 
-    <br/>
-    {/* Hide paragraf */}
+      <br />
+      {/* Hide paragraf */}
 
-        <div>
-      <h2>Show and Hide Example</h2>
-      <button onClick={() => setIsVisible(!isVisible)}>
-        {isVisible ? "Hide" : "Show"} Text
-      </button>
-      {isVisible && <p>this text can be hidded or showed to you</p>}
-
-    </div>
+      <div>
+        <h2>Show and Hide Example</h2>
+        <button onClick={() => setIsVisible(!isVisible)}>
+          {isVisible ? "Hide" : "Show"} Text
+        </button>
+        {isVisible && <p>this text can be hidded or showed to you</p>}
+      </div>
     </>
   )
 }
