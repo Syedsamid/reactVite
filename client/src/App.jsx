@@ -150,6 +150,18 @@ function App() {
 
   const [isVisible, setIsVisible] = useState(true);
 
+    const [age, setAge] = useState(20)
+
+  const changeAge = () =>{
+ 
+    setAge(age + 1)
+  }
+
+  const decreaseAge = ()=>{
+    setAge(age - 1)
+  }
+
+
   return (
     <>
       <div>
@@ -158,9 +170,9 @@ function App() {
         </button>
       </div>
 
-      {/* input words */}
-      <br />
-
+      
+<br />
+    {/* input words */}
       <div>
         <h2>Type Something</h2>
         <input
@@ -172,15 +184,22 @@ function App() {
         <p>You typed: {text}</p>
       </div>
 
-      <br />
+<br />
       {/* Hide paragraf */}
-
       <div>
         <h2>Show and Hide Example</h2>
         <button onClick={() => setIsVisible(!isVisible)}>
           {isVisible ? "Hide" : "Show"} Text
         </button>
         {isVisible && <p>this text can be hidded or showed to you</p>}
+      </div>
+
+<br />
+      {/* Counter */}
+      <div>
+        <h1>Age is {age}</h1>
+        <button onClick={changeAge}>Change Age</button>
+        <button onClick={decreaseAge}>decrease Age</button>
       </div>
     </>
   )
