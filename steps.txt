@@ -1,0 +1,72 @@
+// Inistallation of React Vite
+
+1. Create a new repository of your project name 
+2. git clone ssh-url
+3. cd repoName
+4. npm create vite@latest
+// Vite is a bundler tool for react setup 
+// vite is faster then CRA
+// React is a Library for Building UI Components
+// React deals with Virtual DOM
+
+5. Enter project name as client
+6. Select REact and next JavaScript
+7. cd client
+8. npm install
+9. npm run dev
+
+// by default CRA it takes 3000 port number
+// But Vite uses 5173 port number
+
+10. delete eslint.config.JavaScript
+11. Remove StrictMode from main.js also Remove the import of it
+12. Clear index.css and App.css
+13. Clear App.js and Add rafce Hello World import React from 'react'
+import React from 'react'
+
+function App() {
+  return (
+    <>
+    
+    <h1>Hello samid</h1>
+    
+    </>
+  )
+}
+
+export default App
+
+
+14. open index.html and change title
+15. open index.html and meta tags and favicon
+16. JSX ==> javascript XML people also say as JavaScript + HTML
+17. Flow of React
+- App.jsx ==> Hello World ==> Export main.jsx
+- main.jsx ==> root ==> index.html
+18. Why React why not html
+- HTML uses JAvaSscript DOM- Changing an single element or Button takes whole page to reload
+from  start
+
+- But in REact it uses something called Virtual DOM
+- It will clone the Original DOM and m=Makes a copy of DOM called Virtual DOM
+
+Virtual dom changess the component 
+React Compares the changed element and it will only render that component
+- Virtual DOM changes or render the only component which is new or changed recently from Original DOM
+
+
+// Hooks are the special types of functions in react
+
+1. useState 
+
+Why useState  
+Dynamic variables should be use with new way to use variables in react
+
+- How to use useState
+
+
+
+
+
+
+

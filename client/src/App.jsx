@@ -141,7 +141,8 @@
 
 
 //!  Hooks  useState
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
 function App() {
   const [isOn, setIsOn] = useState(false)
@@ -152,6 +153,8 @@ function App() {
 
     const [age, setAge] = useState(20)
 
+    const [users, setUsers] = useState([]);
+
   const changeAge = () =>{
  
     setAge(age + 1)
@@ -161,9 +164,22 @@ function App() {
     setAge(age - 1)
   }
 
+  useEffect(()=>{
+    fetchUser()
+    },[])
+
+    const api = "https://fake-json-api.mock.beeceptor.com/users"
+    async function fetchUser(){
+      const response = await axios.get(api)
+      console.log(response.data);
+      setUsers(response.data)
+    }
+  
+
 
   return (
     <>
+    <h1 id="useeffect"></h1>
       <div>
         <h1>Toggle Button</h1>
         <button onClick={() => setIsOn(!isOn)}>{isOn ? "ON" : "OFF"}
@@ -195,7 +211,17 @@ function App() {
       </div>
 
 <br />
-      {/* Counter */}
+      
+      <ul>
+        {users.map((item)=>{
+          return (
+            <li>{item.name}</li>
+          )
+        })}
+      </ul>
+      <br />
+      
+{/* Counter */}
       <div>
         <h1>Age is {age}</h1>
         <button onClick={changeAge}>Change Age</button>

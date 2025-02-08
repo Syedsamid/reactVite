@@ -1,0 +1,13 @@
+@ =>    Tailwind setup 
+
+1. cd client
+2. Open tailwindcss.com
+3. npm install tailwindcss @tailwindcss/vite
+    and import in vite.config.js
+    import tailwindcss from '@tailwindcss/vite'
+    
+    export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})
